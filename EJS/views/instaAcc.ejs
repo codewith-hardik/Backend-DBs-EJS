@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Account</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>InstaGram Account </h1>
+    <h1> This Page is belong to @<%= data.name  %> </h1>
+    <button>Follow</button><button>Massege</button>
+
+    <h3>followers: <%= data.followers %> &nbsp;&nbsp;following: <%= data.following %></h3>
+    <hr>
+    <h2>Post of This Account :-</h2>
+    <% for(post of data.posts){ %>
+        <img src="<%=post.image%>" alt="image">
+        <h3>Likes: <%= post.likes %> &nbsp;&nbsp;Comments: <%= post.comments %></h3>
+    <% } %>
+    <%- include("includes/footer.ejs") %>
+    <script src="/app.js"></script>
+</body>
+</html>
